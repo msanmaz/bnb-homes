@@ -3,7 +3,7 @@ import React from 'react'
 const Select = () => {
     return (
         <>
-            <div className='flex justify-center gap-x-6 md:flex-row'>
+            <div className='flex justify-center  gap-x-6 md:flex-row'>
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">

@@ -3,6 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import prisma from 'lib/prisma'
 
+
+
 export default NextAuth({
   providers: [
     CredentialsProvider({
@@ -13,7 +15,6 @@ export default NextAuth({
           password: {  label: "Password", type: "password" }
         },
         async authorize(credentials, req) {
-            console.log(credentials)
             const result = await prisma.User.findUnique({
                 where: {
                   username: credentials.username,
@@ -21,7 +22,6 @@ export default NextAuth({
       
               });
       
-              console.log(result)
           if (!result) {
             return null
           }
@@ -53,14 +53,12 @@ export default NextAuth({
   callbacks: {
     jwt: async ({ token, user,account }) => {
       if(user){
-        console.log(user)
         user.username = token.username
       }
       return Promise.resolve(token);
     },
     session: async ({ session, token, user }) => {
       if (!session) return null
-      console.log(session,'sess')
       session.username = token.username
       session.jti = token.jti
       return Promise.resolve(session)

@@ -215,5 +215,8 @@ a {
 
 
 
-      
- 
+      .card.image-full:before{
+        --tw-bg-opacity: 0.5!important
+        
+      }
+
