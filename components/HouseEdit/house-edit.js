@@ -6,7 +6,7 @@ import Button from 'common/Button/but-ton';
 import { ref, uploadBytesResumable, listAll, getDownloadURL } from 'firebase/storage'
 
 
-const EditHouse = () => {
+const EditHouse = ({house}) => {
   const [images, setImages] = useState([]);
   const [urls, setUrls] = useState([]);
   const [progress, setProgress] = useState(0);
@@ -44,7 +44,7 @@ const EditHouse = () => {
 
   return (
     <div>
-
+      <div className='bebasBold text-2xl flex justify-center'>{house && house.caption}</div>
       <Input handleChange={handleChange} />
       <Button handleUpload={handleUpload}> Upload Image</Button>
       <Success progress={progress} />

@@ -14,16 +14,15 @@ const Index = ({session}) => {
 export default Index
 
 export async function getServerSideProps(context) {
-  console.log(context)
   const session = await prisma.Houses.findUnique({
     where:{
       caption:context.params.name
     }
   });
-
+  const house = JSON.parse(JSON.stringify(session))
   return {
       props: {
-        session
+        house
       }
   }
 }
