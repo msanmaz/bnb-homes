@@ -1,4 +1,4 @@
-import Hero from 'components/Hero.js'
+import Hero from 'components/Hero/index.js'
 import Head from 'next/head'
 import Nav from 'components/Navbar/nav-bar'
 import LocationCardContainer from 'components/LocationCard'

@@ -1,4 +1,4 @@
-import Hero from 'components/Hero.js'
+import Hero from 'components/Hero/index.js'
 import React from 'react'
 import Layout from 'common/Layout'
 import Select from 'common/Select/sel-ect'
