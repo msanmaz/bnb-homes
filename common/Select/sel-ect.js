@@ -10,7 +10,7 @@ const Select = () => {
                         <span className="label-text">Number Of Rooms</span>
                     </label>
                     <select className="select select-bordered">
-                        <option disabled selected>Pick one</option>
+                        <option disabled defaultValue>Pick one</option>
                         <option>Star Wars</option>
                         <option>Harry Potter</option>
                         <option>Lord of the Rings</option>

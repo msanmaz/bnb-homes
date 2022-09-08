@@ -40,7 +40,6 @@ Home.getLayout = (page) => {
 
 
 const Intro = ({ isDark }) => {
-  console.log(isDark,'in intor')
   return (
     <div className='flex w-full justify-center py-[2rem] text-sm small:text-base px-[1rem] small:px-[11rem] text-center'>
       <h1 className={`futuraMedium to-base-content`}>
@@ -56,10 +55,8 @@ const Policy = ({isDark}) => {
   { name: 'Ilgi', desc: 'Gayrimenkul alanında ki tecrübemizle birlikte karar verme sürenicizde oluşabılecek bütün soru işaretlerini gidermenizde yardımcı oluyoruz.', logo: <Care  isDark={isDark} size={80} /> },
   { name: 'Yatırım', desc: 'Gayrimenkul en kıymetli yatırım araçlarından biridir. Attıla Homes tecrübesi ve güvencesiyle yatırımlarınızı en doğru şekilde değerlendirmenizi sağlıyoruz.', logo: <Invest  isDark={isDark} size={80} /> },
   { name: 'Guven', desc: 'Utkucan ailesi ve yakın dostlarından oluşan portföyümüzle iş ortaklığımızı güven üzerine temellendiriyoruz.', logo: <Shield size={80} isDark={isDark} /> },
-  { name: 'Iletisim', desc: 'Hayal ettiğiniz yaşam alanınıza dair düşünceleriniz ve sorunlarınız bizim için çok önemli.Attıla Homes olarak sürecin her anında sizinle iletişim halindeyiz.', logo: <MessageBubble  isDark={isDark} size={80} /> },
+  { name: 'Iletisim', desc: 'Hayal ettiğiniz yaşam alanınıza dair düşünceleriniz ve sorunlarınız bizim için çok önemli.Attıla Homes olarak sürecin her anında sizinle iletişim halindeyiz.', logo: <MessageBubble  isDark={isDark} size={80} /> }]
 
-
-  ]
   return (
     <>
       <div className='flex py-[3rem] items-center justify-center w-full small:flex-row'>

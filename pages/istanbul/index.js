@@ -7,6 +7,7 @@ import prisma from 'lib/prisma'
 import CardContainer from 'components/CardContainer/card-container'
 
 const Istanbul = ({ houses }) => {
+  console.log(houses)
   return (
     <>
       <Hero caption={'Istanbul'} main={false} />

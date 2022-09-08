@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Locations = [{ loc: 'istanbul', image: 'istanbulbg.jpg' }, { loc: 'bodrum', image: 'bodrumbg.png' }, { loc: 'stuttgart', image: 'stuttgartbg.jpg' }]
+const Locations = [{ loc: 'Istanbul', image: 'istanbulbg.jpg' }, { loc: 'Bodrum', image: 'bodrumbg.png' }, { loc: 'stuttgart', image: 'stuttgartbg.jpg' }]
 
 const LocationCardContainer = () => {
     return (
@@ -34,7 +34,7 @@ const LocationCard = ({image,title}) => {
             <div className={`relative w-full`}>
                 <Image src={`/${image}`} layout="responsive" className='relative' width={600} height={520}/>
                 <div className='absolute h-full inset-0 hover:opacity-0 opacity-50 bg-gray-800'></div>
-                <Link href="/istanbul">
+                <Link href={`/${title}`}>
                     <div className="absolute mobilecenter small:centerlayer">
                         <div className="text-center">
                             <div className="inline-flex">

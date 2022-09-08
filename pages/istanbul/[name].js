@@ -1,13 +1,29 @@
+import prisma from 'lib/prisma'
 import { useRouter } from 'next/router'
 import React from 'react'
 
 
-const Index = () => {
+const Index = ({session}) => {
     const router = useRouter()
-    console.log(router)
+
   return (
-    <div>Index</div>
+    <div>{session.caption}</div>
   )
 }
 
 export default Index
+
+export async function getServerSideProps(context) {
+  console.log(context)
+  const session = await prisma.Houses.findUnique({
+    where:{
+      caption:context.params.name
+    }
+  });
+
+  return {
+      props: {
+        session
+      }
+  }
+}
