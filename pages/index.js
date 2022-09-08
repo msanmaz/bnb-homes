@@ -31,7 +31,7 @@ export default function Home() {
 
 
 Home.getLayout = (page) => {
-  return <Layout title={'404'}>{page}</Layout>
+  return <Layout title={'Attila-Homes'}>{page}</Layout>
 }
 
   
@@ -39,7 +39,7 @@ Home.getLayout = (page) => {
 
 
 
-const Intro = ({ isDark }) => {
+const Intro = () => {
   return (
     <div className='flex w-full justify-center py-[2rem] text-sm small:text-base px-[1rem] small:px-[11rem] text-center'>
       <h1 className={`futuraMedium to-base-content`}>
@@ -60,9 +60,9 @@ const Policy = ({isDark}) => {
   return (
     <>
       <div className='flex py-[3rem] items-center justify-center w-full small:flex-row'>
-        <div className={`w-[40%] border-t border-gray-300`}></div>
+        <div className={`w-[40%] ml-[1rem] md:ml-0 border-t border-gray-300`}></div>
         <div className='bebasBold text-xl md:text-2xl px-[1rem] md:px-[3rem]'>Politikamiz</div>
-        <div className={`w-[40%] border-t border-gray-300 `}></div>
+        <div className={`w-[40%] mr-[1rem] md:mr-0 border-t border-gray-300 `}></div>
       </div>
 
       <div className='flex w-full justify-center flex-wrap'>

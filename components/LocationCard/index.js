@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import Button from 'common/Button/but-ton'
 
 const Locations = [{ loc: 'Istanbul', image: 'istanbulbg.jpg' }, { loc: 'Bodrum', image: 'bodrumbg.png' }, { loc: 'stuttgart', image: 'stuttgartbg.jpg' }]
 
@@ -38,7 +39,7 @@ const LocationCard = ({image,title}) => {
                     <div className="absolute mobilecenter small:centerlayer">
                         <div className="text-center">
                             <div className="inline-flex">
-                                <button className="z-20 block uppercase mx-auto shadow dark:bg-blue-light dark:text-white dark:hover:bg-white dark:hover:text-black bg-white hover:bg-blue-light hover:text-white focus:shadow-outline focus:outline-none text-black text-xs py-3 px-10 rounded">{title}</button>
+                             <Button variant='primary'>{title}</Button>
                             </div>
                         </div>
                     </div>

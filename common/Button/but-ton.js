@@ -21,7 +21,7 @@ const Button = ({
         {
           "text-white bg-[rgba(22,22,22,.95)] border-gray-900 hover:bg-white hover:text-gray-900 disabled:hover:bg-gray-900 disabled:hover:text-white":
             variant === "primary",
-          "text-gray-900 bg-transparent border-gray-920 hover:bg-gray-100":
+          "text-gray-200 bg-transparent hover:text-gray-800 border-gray-920 hover:bg-gray-100":
             variant === "secondary",
             "text-white bg-green-300 border-gray-920 hover:bg-green-500":
             variant === "success",
