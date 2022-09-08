@@ -6,16 +6,19 @@ import React from "react"
 const Button = ({
   children,
   className,
+  handleUpload,
   isLoading = false,
   variant = "primary",
   type='submit',
   ...props
 
 }) => {
+  const noop = () => {}
   return (
     <button
       {...props}
       type={type}
+      onClick={handleUpload ? handleUpload : noop}
       className={clsx(
         "w-full uppercase futuraMedium whitespace-pre flex items-center justify-center min-h-[50px] px-5 py-[10px] text-small-regular border transition-colors duration-200 disabled:opacity-50",
         {
