@@ -6,15 +6,16 @@ import RentalUpload from 'components/RentalUpload/rental-upload'
 import Login from 'components/Login/user-login'
 import Link from 'next/link'
 import EditHouse from 'components/HouseEdit/house-edit'
+import prisma from 'lib/prisma'
+import HouseFinder from 'components/HouseFinder/house-finder'
 
 
 
-const Admin = ({ session }) => {
+const Admin = ({ session,houses }) => {
     if (!session || !session.user) return <Login />
-
     return (
         <>
-            <SideBar />
+            <SideBar houses={houses} />
         </>
     )
 }
@@ -22,7 +23,7 @@ const Admin = ({ session }) => {
 
 
 
-const SideBar = () => {
+const SideBar = ({houses}) => {
     const [view, setView] = useState('')
 
 
@@ -43,7 +44,7 @@ const SideBar = () => {
                 view === 'Kiralik' &&  <RentalUpload/>
             }
             {
-                view === 'Show' &&  <EditHouse/>
+                view === 'Show' &&  <HouseFinder houses={houses}/>
             }
             </div>
             <div className="drawer-side">
@@ -70,9 +71,11 @@ Admin.getLayout = (page) => {
 
 export async function getServerSideProps(context) {
     const session = await getSession(context);
+    let houses = await prisma.Houses.findMany()
+    houses = JSON.parse(JSON.stringify(houses))
     return {
         props: {
-            providers:await getProviders(context),
+            houses,
             session
         }
     }

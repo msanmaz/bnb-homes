@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     return res.status(501).end()
   }
 
-  const { room,caption,livingR,kitchen,bathR,carpark,location,price,heating,type,image } = req.body
+  const { image } = req.body
   console.log(req.body)
   if (req.method === 'POST') { 
    const tweet = await prisma.houses.create({
