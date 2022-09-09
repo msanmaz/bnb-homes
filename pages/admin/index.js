@@ -28,9 +28,10 @@ const SideBar = ({houses}) => {
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col items-center justify-start">
-            <div className='fixed top-[80%] right-[10%]'>
+            <div className="drawer-content max-w-full md:max-w-auto flex flex-col items-center px-4 md:px-0">
+            <div className='fixed bottom-[3%] flex flex-row z-20 bg-purple-500 rounded-lg right-[10%]'>
             <label htmlFor="my-drawer-2" className="btn btn-ghost rounded-full drawer-button lg:hidden">Menu</label>
+            <div className='divider'></div>
             <button onClick={()=> signOut()} className="btn btn-ghost rounded-full lg:hidden">Logout</button>
 
             </div>

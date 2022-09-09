@@ -2,10 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 const HouseCard = ({img,type,price,caption,location}) => {
-    console.log(location,'locc')
+
     return (
         <Link href={`/${location}/${caption}`}>
-        <div className="card cursor-pointer mx-2 my-2 !hover:opacity-100 w-[28rem] shadow-xl image-full">
+        <div className={`card cursor-pointer mx-2 my-2 !hover:opacity-100 w-full md:w-[32%] shadow-xl image-full`}>
             <Image layout='responsive' width={600} height={350} className="bg-center rounded-xl object-cover" src={img}
                 alt="Profile picture" />
             <div className="card-body !p-[1rem]">
