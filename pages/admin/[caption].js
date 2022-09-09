@@ -1,7 +1,7 @@
 import React from 'react'
 import EditHouse from 'components/HouseEdit/house-edit'
 import Layout from 'common/Layout'
-import { getSession } from 'next-auth/react'
+import { getSession,signOut } from 'next-auth/react'
 import Link from 'next/link'
 import prisma from 'lib/prisma'
 
@@ -19,7 +19,6 @@ export default HouseName
 
 
 const SideBar = ({house}) => {
-  const [view, setView] = React.useState('')
 
 
   return (
@@ -38,7 +37,7 @@ const SideBar = ({house}) => {
               <ul className="menu bg-gray-200 rounded-lg p-4 overflow-y-auto w-80 text-base-content">
               <Link href='/admin'><li className='futuraMedium text-[#161616]'><a>Satilik Ev Ekle</a></li></Link>
               <Link href='/admin'><li className='futuraMedium text-[#161616]'><a>Kiralik Ev Ekle</a></li></Link>
-                  <li className='futuraMedium text-[#161616]'><a>Evleri Goster</a></li>
+              <Link href='/admin'><li className='futuraMedium text-[#161616]'><a>Evleri Goster</a></li></Link>
                   <Link href='/'><li className='futuraMedium text-[#161616]'><a>Anasayfaya Git</a></li></Link>
 
               </ul>

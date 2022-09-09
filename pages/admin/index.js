@@ -5,10 +5,10 @@ import HouseUpload from 'components/HouseUpload/house-upload'
 import RentalUpload from 'components/RentalUpload/rental-upload'
 import Login from 'components/Login/user-login'
 import Link from 'next/link'
-import EditHouse from 'components/HouseEdit/house-edit'
 import prisma from 'lib/prisma'
 import HouseFinder from 'components/HouseFinder/house-finder'
-
+import { useContext } from 'react'
+import { DarkModeContext } from "lib/context/darkModeContext"
 
 
 const Admin = ({ session,houses }) => {
@@ -24,10 +24,7 @@ const Admin = ({ session,houses }) => {
 
 
 const SideBar = ({houses}) => {
-    const [view, setView] = useState('')
-
-
-
+    const { view,setView,toggleAdminChange } = useContext(DarkModeContext)
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -50,9 +47,9 @@ const SideBar = ({houses}) => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu bg-gray-200 rounded-lg p-4 overflow-y-auto w-80 text-base-content">
-                    <li className='futuraMedium text-[#161616]' onClick={()=> setView('Satilik')}><a>Satilik Ev Ekle</a></li>
-                    <li className='futuraMedium text-[#161616]' onClick={()=> setView('Kiralik')}><a>Kiralik Ev Ekle</a></li>
-                    <li className='futuraMedium text-[#161616]'  onClick={()=> setView('Show')}><a>Evleri Goster</a></li>
+                    <li className='futuraMedium text-[#161616]' onClick={()=> toggleAdminChange('Satilik')}><a>Satilik Ev Ekle</a></li>
+                    <li className='futuraMedium text-[#161616]' onClick={()=> toggleAdminChange('Kiralik')}><a>Kiralik Ev Ekle</a></li>
+                    <li className='futuraMedium text-[#161616]'  onClick={()=> toggleAdminChange('Show')}><a>Evleri Goster</a></li>
                     <Link href='/'><li className='futuraMedium text-[#161616]'><a>Anasayfaya Git</a></li></Link>
 
                 </ul>

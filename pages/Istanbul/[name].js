@@ -1,17 +1,22 @@
 import prisma from 'lib/prisma'
 import { useRouter } from 'next/router'
 import React from 'react'
+import Layout from 'common/Layout'
 
 
-const Index = ({session}) => {
-
+const Index = ({house}) => {
 
   return (
-    <div>{session.caption}</div>
+    <div>{house.caption}</div>
   )
 }
 
 export default Index
+
+Index.getLayout = (page) => {
+  return <Layout title={'Attila-Homes'}>{page}</Layout>
+}
+
 
 export async function getServerSideProps(context) {
   const session = await prisma.Houses.findUnique({
