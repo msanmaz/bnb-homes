@@ -9,7 +9,7 @@ type InputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   "placeholder"
 > & {
-  handleChange:Function,
+  setImages:Function,
   label: string
   errors?: Record<string, unknown>
   touched?: Record<string, unknown>
@@ -17,7 +17,7 @@ type InputProps = Omit<
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ type,onChange, name, label, errors, touched, required, ...props }, ref) => {
+  ({ type,setImages, name, label, errors, touched, required, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [showPassword, setShowPassword] = useState(false)
     const [inputType, setInputType] = useState(type)
@@ -43,7 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     <input
                     type={inputType}
                     name={name}
-                    onChange={ () => onChange || noop}
+                    onChange={(event) => setImages(event.target.files[0])}
                     placeholder=" "
                     className={clsx(
                       "pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200",

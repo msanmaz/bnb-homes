@@ -2,10 +2,11 @@ import prisma from 'lib/prisma'
 import { useRouter } from 'next/router'
 import React from 'react'
 import Layout from 'common/Layout'
+import { getHouse } from 'lib/data/getHousePhotos'
 
 
 const Index = ({house}) => {
-
+  console.log(house)
   return (
     <div>{house.caption}</div>
   )
@@ -19,11 +20,8 @@ Index.getLayout = (page) => {
 
 
 export async function getServerSideProps(context) {
-  const session = await prisma.Houses.findUnique({
-    where:{
-      caption:context.params.name
-    }
-  });
+ 
+  const session = await  getHouse(context.params.name,prisma)
   const house = JSON.parse(JSON.stringify(session))
   return {
       props: {

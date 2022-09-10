@@ -6,7 +6,7 @@ import Button from 'common/Button/but-ton';
 import { ref, uploadBytesResumable, listAll, getDownloadURL } from 'firebase/storage'
 
 
-const EditHouse = ({house}) => {
+const EditHouse = ({ house }) => {
   const [images, setImages] = useState([]);
   const [urls, setUrls] = useState([]);
   const [progress, setProgress] = useState(0);
@@ -35,7 +35,18 @@ const EditHouse = ({house}) => {
           console.log(error);
         },
         async () => {
-         await getDownloadURL(uploadTask.snapshot.ref).then((url) => console.log(url))
+          await getDownloadURL(uploadTask.snapshot.ref).then(async (image) => {
+            const response = await fetch('/api/imageUpload', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                image: image,
+                id: house.id
+              })
+            })
+            const resp = await response.json()
+            console.log(resp)
+          })
         });
     });
 
@@ -48,7 +59,7 @@ const EditHouse = ({house}) => {
       <Input handleChange={handleChange} />
       <Button handleUpload={handleUpload}> Upload Image</Button>
       <Success progress={progress} />
-      
+
     </div>
   )
 }
@@ -80,7 +91,7 @@ const Success = ({ progress }) => {
 
         }
         <div className='flex justify-center'>
-        <div className="radial-progress" style={{ "--value": progress }}>{progress}%</div>
+          <div className="radial-progress" style={{ "--value": progress }}>{progress}%</div>
         </div>
 
 

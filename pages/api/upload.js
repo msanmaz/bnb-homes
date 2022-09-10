@@ -6,10 +6,9 @@ export default async function handler(req, res) {
     return res.status(501).end()
   }
 
-  const { room,caption,livingR,kitchen,bathR,carpark,location,price,heating,type,image } = req.body
-  console.log(req.body)
+  const { room,caption,livingR,kitchen,bathR,carpark,location,price,heating,type,url } = req.body
   if (req.method === 'POST') { 
-   const tweet = await prisma.houses.create({
+   const tweet = await prisma.Houses.create({
       data: {
         room: room,
         livingR:livingR,
@@ -20,7 +19,7 @@ export default async function handler(req, res) {
         price:price,
         heating:heating,
         type:type,
-        image:image,
+        image:url,
         caption:caption
       },
     })

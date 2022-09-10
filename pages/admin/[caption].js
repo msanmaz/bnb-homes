@@ -4,9 +4,11 @@ import Layout from 'common/Layout'
 import { getSession,signOut } from 'next-auth/react'
 import Link from 'next/link'
 import prisma from 'lib/prisma'
+import Login from 'components/Login/user-login'
 
 
 const HouseName = ({session,house}) => {
+  if (!session || !session.user) return <Login />
 
   return (
    <>
@@ -49,7 +51,7 @@ const SideBar = ({house}) => {
 
 
 HouseName.getLayout = (page) => {
-  return <Layout title={'404'}>{page}</Layout>
+  return <Layout title={'Photo Add | Attila Homes'}>{page}</Layout>
 }
 
 

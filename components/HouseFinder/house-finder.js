@@ -36,7 +36,7 @@ const HouseFinder = ({houses}) => {
         house.caption.toLowerCase().includes(searchInput)
         ).map((item) => (
          
-          <HouseCard key={item.id} location={item.location} img={item.image} caption={item.caption} price={item.price} type={item.type} />
+          <HouseCard key={item.id} location={'admin'} img={item.image} caption={item.caption} price={item.price} type={item.type} />
 
    
 

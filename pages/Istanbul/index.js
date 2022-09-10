@@ -2,12 +2,12 @@ import Hero from 'components/Hero/index.js'
 import React from 'react'
 import Layout from 'common/Layout'
 import Select from 'common/Select/sel-ect'
-import Image from 'next/image'
 import prisma from 'lib/prisma'
 import CardContainer from 'components/CardContainer/card-container'
+import { getHouses } from 'lib/data/getHousePhotos'
 
 const Istanbul = ({ houses }) => {
-  console.log(houses)
+
   return (
     <>
       <Hero caption={'Istanbul'} main={false} />
@@ -42,14 +42,12 @@ const Intro = () => {
 
 
 
-export async function getServerSideProps(context) {
-
-
-  let tweets = await prisma.Houses.findMany()
-  tweets = JSON.parse(JSON.stringify(tweets))
+export async function getServerSideProps() {
+  let houses = await getHouses(prisma)
+  houses = JSON.parse(JSON.stringify(houses))
 
 
   return {
-    props: { houses: tweets }
+    props: { houses: houses }
   };
 }

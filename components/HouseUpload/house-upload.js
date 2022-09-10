@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Input from 'common/Input/index.tsx'
 import { useForm } from "react-hook-form"
 import Button from 'common/Button/but-ton'
 import { useState } from 'react'
 import Spinner from 'common/icons/spinner'
-import { ref, uploadBytesResumable, listAll, getDownloadURL } from 'firebase/storage'
+import { ref, getDownloadURL, uploadBytes } from 'firebase/storage'
 import { storage } from 'lib/firebase'
 
 const HouseUpload = () => {
-    const Locations = [{ loc: 'room', type: 'text' }, { loc: 'caption', type: 'text' }, { loc: 'livingR', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }, { loc: 'file', type: 'file' }]
+    const Locations = [{ loc: 'room', type: 'text' }, { loc: 'caption', type: 'text' }, { loc: 'livingR', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }]
     const {
         register,
         handleSubmit,
@@ -22,12 +22,8 @@ const HouseUpload = () => {
     })
     const [success, setSuccess] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [images, setImages] = useState([])
-    const [progress, setProgress] = useState(0)
-
-    console.log(success, 'success')
-    console.log(loading, 'load')
-
+    const [images, setImages] = useState(null)
+    const [imageUrl, setImageUrl] = useState(null)
 
     React.useEffect(() => {
         if (formState.isSubmitSuccessful) {
@@ -36,52 +32,36 @@ const HouseUpload = () => {
     }, [formState, reset]);
 
 
-    const handleChange = (e) => {
-        for (let i = 0; i < e.target.files.length; i++) {
-          const newImage = e.target.files[i];
-          setImages((prevState) => [...prevState, newImage]);
-        }
-      };
-    React.useEffect(() => {
-        console.log(images, 'inuse')
+
+
+    useEffect(() => {
+        console.log(images)
     }, [images])
+
 
     const onFormSubmit = async (data, event) => {
         event.preventDefault();
         setLoading(true)
+
         const { room, caption, livingR, kitchen, bathR, carpark, location, price, heating, type } = data
-        let image;
-
-        const refStorage = ref(storage, `images/${image.name}`);
-        const uploadTask = uploadBytesResumable(refStorage, image)
-        console.log(uploadTask, 'uploadT')
-        uploadTask.on(
-            "state_changing",
-            (snapshot) => {
-                const progress = Math.round(
-                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                );
-                setProgress(progress);
-            },
-            (error) => {
-                console.log(error);
-            },
-            async () => {
-                await getDownloadURL(uploadTask.snapshot.ref).then((url) => image += url)
-            });
-
-        const response = await fetch('/api/upload', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                room, livingR, kitchen, bathR, carpark, location, price, heating, type, image, caption
+        const refStorage = ref(storage, `images/${images.name}`);
+        uploadBytes(refStorage, images).then((snapshot) => {
+            getDownloadURL(snapshot.ref).then(async (url) => {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        room, livingR, kitchen, bathR, carpark, location, price, heating, type, url, caption
+                    })
+                })
+                const resp = await response.json()
+                if (resp) {
+                    setSuccess((prev) => !prev)
+                    setLoading((prev) => !prev)
+                }
             })
         })
-        const resp = await response.json()
-        if (resp) {
-            setSuccess((prev) => !prev)
-            setLoading((prev) => !prev)
-        }
+
     }
 
 
@@ -105,7 +85,6 @@ const HouseUpload = () => {
 
 
                                         <Input
-                                            onChange={handleChange}
                                             type={item.type}
                                             label={item.loc}
                                             {...register(`${item.loc}`, { required: `${item.loc} is required` })}
@@ -116,6 +95,8 @@ const HouseUpload = () => {
                                 )
                             })
                         }
+
+                        <FileInput setImages={setImages} />
                     </div>
 
 
@@ -132,3 +113,27 @@ const HouseUpload = () => {
 }
 
 export default HouseUpload
+
+
+
+
+const FileInput = ({ setImages }) => {
+
+    return (
+        <div className='w-full px-4'>
+
+            <input
+                type={'file'}
+                name={'image'}
+                onChange={(event) => {
+                    setImages(event.target.files[0])
+                }}
+                placeholder="Upload Image "
+                className="pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200"
+
+            />
+        </div>
+
+
+    )
+}
