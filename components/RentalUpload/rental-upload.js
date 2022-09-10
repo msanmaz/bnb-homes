@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import Button from 'common/Button/but-ton'
 
 const RentalUpload = () => {
-    const Locations = [{ loc: 'room' },{loc:'caption'}, { loc: 'livingR' }, { loc: 'kitchen' }, { loc: 'bathR' }, { loc: 'carpark' }, { loc: 'location' }, { loc: 'price' }, { loc: 'heating' }, { loc: 'type' }, { loc: 'image' }]
+    const Locations = [{ loc: 'room',type:'text' },{loc:'caption',type:'text'}, { loc: 'livingR',type:'text' }, { loc: 'kitchen',type:'text' }, { loc: 'bathR',type:'text' }, { loc: 'carpark',type:'text' }, { loc: 'location',type:'text' }, { loc: 'price',type:'text' }, { loc: 'heating',type:'text' }, { loc: 'type',type:'text' }, { loc: 'file',type:'file' }]
     const {
         register,
         handleSubmit,
@@ -27,7 +27,7 @@ const RentalUpload = () => {
         })
         const resp = await response.json()
         if(resp){
-            setSuccess(true)
+            setSuccess((prev) => !prev)
         }
     }
     return (
@@ -43,7 +43,8 @@ const RentalUpload = () => {
                             <div key={item.loc} className='px-4 py-4 w-[50%]'>
 
 
-                                <Input
+                                <Input                             
+                                    type={item.type}
                                     label={item.loc}
                                     {...register(`${item.loc}`, { required: `${item.loc} is required` })}
                                     autoComplete={item.loc}

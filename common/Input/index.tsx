@@ -9,6 +9,7 @@ type InputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
   "placeholder"
 > & {
+  handleChange:Function,
   label: string
   errors?: Record<string, unknown>
   touched?: Record<string, unknown>
@@ -16,7 +17,7 @@ type InputProps = Omit<
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ type, name, label, errors, touched, required, ...props }, ref) => {
+  ({ type,onChange, name, label, errors, touched, required, ...props }, ref) => {
     const inputRef = React.useRef<HTMLInputElement>(null)
     const [showPassword, setShowPassword] = useState(false)
     const [inputType, setInputType] = useState(type)
@@ -34,7 +35,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     useImperativeHandle(ref, () => inputRef.current!)
 
     const hasError = get(errors, name) && get(touched, name)
-
+    const noop = () => {}
     return (
       <div>
         <div className="relative z-0 w-full text-base-regular">
@@ -42,6 +43,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                     <input
                     type={inputType}
                     name={name}
+                    onChange={ () => onChange || noop}
                     placeholder=" "
                     className={clsx(
                       "pt-4 pb-1 block w-full px-4 mt-0 bg-transparent border appearance-none focus:outline-none focus:ring-0 focus:border-gray-400 border-gray-200",

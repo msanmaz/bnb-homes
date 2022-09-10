@@ -24,7 +24,7 @@ const Admin = ({ session,houses }) => {
 
 
 const SideBar = ({houses}) => {
-    const { view,setView,toggleAdminChange } = useContext(DarkModeContext)
+    const { view,toggleAdminChange } = useContext(DarkModeContext)
     return (
         <div className="drawer drawer-mobile">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

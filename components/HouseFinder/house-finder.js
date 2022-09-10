@@ -29,7 +29,7 @@ const HouseFinder = ({houses}) => {
         <div className='bebasBold text-2xl py-6 justify-center'>Enter House Name For Results</div>
         <Input setSearchInput={setSearchInput} />
       </div>
-
+      
       <div className='flex !w-[100%] md:flex-row justify-center flex-wrap md:px-2 px-0 py-4'>
       {
         searchInput.length >= 1 ?  houses.filter((house) => 
