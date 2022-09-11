@@ -5,6 +5,7 @@ import { getSession,signOut } from 'next-auth/react'
 import Link from 'next/link'
 import prisma from 'lib/prisma'
 import Login from 'components/Login/user-login'
+import { getHouse } from 'lib/data/getHousePhotos'
 
 
 const HouseName = ({session,house}) => {
@@ -56,12 +57,9 @@ HouseName.getLayout = (page) => {
 
 
 export async function getServerSideProps(context) {
-  const sessionHouse = await prisma.Houses.findUnique({
-    where:{
-      caption:context.params.caption
-    }
-  });
- const house = JSON.parse(JSON.stringify(sessionHouse))
+  const getH = await getHouse(context.params.caption,prisma)
+
+  const house = JSON.parse(JSON.stringify(getH))
  const session = await getSession(context);
 
 

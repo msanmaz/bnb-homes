@@ -10,7 +10,7 @@ const EditHouse = ({ house }) => {
   const [images, setImages] = useState([]);
   const [urls, setUrls] = useState([]);
   const [progress, setProgress] = useState(0);
-  console.log(progress)
+  console.log(house,'house')
 
   const handleChange = (e) => {
     for (let i = 0; i < e.target.files.length; i++) {

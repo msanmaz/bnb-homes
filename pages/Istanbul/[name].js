@@ -3,12 +3,17 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Layout from 'common/Layout'
 import { getHouse } from 'lib/data/getHousePhotos'
+import Gallery from 'common/ImageGallery/image-gallery'
+import HouseDetail from 'components/HouseDetail/house-detail'
 
 
 const Index = ({house}) => {
-  console.log(house)
   return (
-    <div>{house.caption}</div>
+<>
+
+<HouseDetail house={house}/>
+
+ </>
   )
 }
 
