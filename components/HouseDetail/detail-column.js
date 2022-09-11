@@ -7,13 +7,13 @@ import Money from 'common/icons/money'
 import M2 from 'common/icons/m2'
 import Kitchen from 'common/icons/kitchen'
 import Bathroom from 'common/icons/bathroom'
-import Combi from 'common/icons/Combi'
+import Combi from 'common/icons/combi'
 import Balkon from 'common/icons/balkon'
 
 const RightColumn = ({house}) => {
-  console.log(house,'houseincolumn')
+
   const { isDark } = useContext(DarkModeContext)
-  console.log(isDark,'isdarki')
+
   return (
     <div className='daire w-full justify-items-center '>
       <Price house={house}/>
