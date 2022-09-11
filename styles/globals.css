@@ -225,3 +225,14 @@ a {
           grid-template-rows:repeat(auto-fit, minmax(0, 1fr));
           grid-template-columns:repeat(1, minmax(0, 1fr));
         }
+        .desc {
+          white-space: pre-line;
+        }
+        #map{
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 0 0 4px;
+          height: 40vh;
+        }

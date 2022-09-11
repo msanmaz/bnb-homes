@@ -52,7 +52,7 @@ const Nav = () => {
       >
         <header
           className={clsx(
-            "relative h-16 px-8 !bg-transparent  mx-auto transition-colors border-b border-transparent duration-200",
+            "relative h-16 px-8 mx-auto transition-colors border-b border-transparent duration-200",
      
             {
               "!bg-[#161616] opacity-90 shadow-lg": isScrolled,
@@ -71,15 +71,12 @@ const Nav = () => {
               <div className="block small:hidden">
                 <Hamburger isDark={isDark} isScrolled={isScrolled}/>
               </div>
+
+              <Link href="/">
               <div className="md:flex hidden transition-all duration-300 items-center h-full">
-                <Link href="/">
-                  {
                     <Logo color='white' size={100} />
-                  }
-
-                </Link>
               </div>
-
+              </Link>
 
               <div className={clsx("hidden pl-[3rem] text-white transition-all duration-300 small:flex items-center h-full",
                 {

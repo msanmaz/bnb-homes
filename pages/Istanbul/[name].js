@@ -3,8 +3,9 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import Layout from 'common/Layout'
 import { getHouse } from 'lib/data/getHousePhotos'
-import Gallery from 'common/ImageGallery/image-gallery'
 import HouseDetail from 'components/HouseDetail/house-detail'
+import HouseDescription from 'components/HouseDetail/house-desc'
+import Maps from 'components/HouseDetail/maps.tsx'
 
 
 const Index = ({house}) => {
@@ -12,7 +13,8 @@ const Index = ({house}) => {
 <>
 
 <HouseDetail house={house}/>
-
+<HouseDescription house={house}/>
+<Maps/>
  </>
   )
 }

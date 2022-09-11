@@ -72,6 +72,7 @@ model Houses {
   price        String?
   heating      String?
   type         String?
+  description  String?
   images Images[]
   places Places[]
 
