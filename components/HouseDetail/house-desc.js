@@ -10,11 +10,12 @@ const HouseDescription = ({ house }) => {
 
     return (
         <>
-            <div className='w-full flex flex-col pt-6 md:pt-[3rem] items-center justify-center'>
+        <div className='flex justify-center bebasBold text-2xl'>Aciklama</div>
+            <div className='w-full flex flex-col pt-6 px-6 md:pt-[3rem] items-center justify-center'>
                 {
                     resultArr.filter((item)=> item.length >= 1).map((item,index) => {
                         return (
-                            <p key={index} className='futuraMedium text-lg py-2'>
+                            <p key={index} className='futuraMedium text-center text-lg'>
 
                                {item} <br />
                             </p>
