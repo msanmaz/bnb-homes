@@ -7,6 +7,7 @@ const HouseDescription = ({ house }) => {
         if (i % 2 === 0) resultArr.push(<br />);
         resultArr.push(item);
     })
+    console.log(resultArr)
 
     return (
         <>
