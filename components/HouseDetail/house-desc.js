@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HouseDescription = ({ house }) => {
-    const arr = house.description !== null ? house.description.split(/<br \/>/) : [];
+    const arr = house.description && house.description.split(/<br \/>/)
     const resultArr = [];
     arr?.forEach((item, i) => {
         if (i % 2 === 0) resultArr.push(<br />);

@@ -9,7 +9,7 @@ const Gallery = ({images}) => {
     }))
 
   return (
-<div>
+<div className='w-full'>
 <ImageGallery thumbnailPosition={'bottom'} slideOnThumbnailOver={false} showNav={false} showPlayButton={false} items={image} />    
  </div>
   )
