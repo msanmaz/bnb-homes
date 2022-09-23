@@ -34,12 +34,12 @@ const Price = ({house}) => {
   return (
     <div className='flex flex-row border-b border-gray-400 justify-between w-full  my-4'>
       <div className='pb-6 flex-start flex px-0 md:px-[2rem]'>
-      <Money size={70}/>
+      <Money size={40}/>
       <p className='text-xl futuraMedium px-4 items-center flex pt-4'>{house.price}</p>
       </div>
 
       <div className='pb-6 flex md:pr-[2rem]'>
-      <M2 size={70}/>
+      <M2 size={40}/>
       <p className='text-xl futuraMedium px-4 items-center flex pt-4'>{house.livingR}</p>
       </div>
 
