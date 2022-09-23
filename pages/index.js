@@ -23,7 +23,7 @@ export default function Home() {
       <Hero main={true} />
       <Intro isDark={isDark} />
       <LocationCardContainer />
-      <Policy  isDark={isDark}/>
+      <Policy isDark={isDark} />
 
     </>
   )
@@ -34,7 +34,7 @@ Home.getLayout = (page) => {
   return <Layout title={'Attila-Homes'}>{page}</Layout>
 }
 
-  
+
 
 
 
@@ -50,12 +50,12 @@ const Intro = () => {
 }
 
 
-const Policy = ({isDark}) => {
-  const policies = [{ name: 'konfor', desc: 'Amacimiz yasam alaninizda rahat etmeniz.Attila Homes olarak portfoyumuzdeki gayrimenkulleri ozenle seciyoruz ve begeninize sunuyoruz', logo: <Comfort  isDark={isDark} size={80} /> },
-  { name: 'Ilgi', desc: 'Gayrimenkul alanında ki tecrübemizle birlikte karar verme sürenicizde oluşabılecek bütün soru işaretlerini gidermenizde yardımcı oluyoruz.', logo: <Care  isDark={isDark} size={80} /> },
-  { name: 'Yatırım', desc: 'Gayrimenkul en kıymetli yatırım araçlarından biridir. Attıla Homes tecrübesi ve güvencesiyle yatırımlarınızı en doğru şekilde değerlendirmenizi sağlıyoruz.', logo: <Invest  isDark={isDark} size={80} /> },
+const Policy = ({ isDark }) => {
+  const policies = [{ name: 'konfor', desc: 'Amacimiz yasam alaninizda rahat etmeniz.Attila Homes olarak portfoyumuzdeki gayrimenkulleri ozenle seciyoruz ve begeninize sunuyoruz', logo: <Comfort isDark={isDark} size={80} /> },
+  { name: 'Ilgi', desc: 'Gayrimenkul alanında ki tecrübemizle birlikte karar verme sürenicizde oluşabılecek bütün soru işaretlerini gidermenizde yardımcı oluyoruz.', logo: <Care isDark={isDark} size={80} /> },
+  { name: 'Yatırım', desc: 'Gayrimenkul en kıymetli yatırım araçlarından biridir. Attıla Homes tecrübesi ve güvencesiyle yatırımlarınızı en doğru şekilde değerlendirmenizi sağlıyoruz.', logo: <Invest isDark={isDark} size={80} /> },
   { name: 'Guven', desc: 'Utkucan ailesi ve yakın dostlarından oluşan portföyümüzle iş ortaklığımızı güven üzerine temellendiriyoruz.', logo: <Shield size={80} isDark={isDark} /> },
-  { name: 'Iletisim', desc: 'Hayal ettiğiniz yaşam alanınıza dair düşünceleriniz ve sorunlarınız bizim için çok önemli.Attıla Homes olarak sürecin her anında sizinle iletişim halindeyiz.', logo: <MessageBubble  isDark={isDark} size={80} /> }]
+  { name: 'Iletisim', desc: 'Hayal ettiğiniz yaşam alanınıza dair düşünceleriniz ve sorunlarınız bizim için çok önemli.Attıla Homes olarak sürecin her anında sizinle iletişim halindeyiz.', logo: <MessageBubble isDark={isDark} size={80} /> }]
 
   return (
     <>
@@ -65,22 +65,22 @@ const Policy = ({isDark}) => {
         <div className={`w-[40%] mr-[1rem] md:mr-0 border-t border-gray-300 `}></div>
       </div>
 
-      <div className='flex w-full justify-center flex-wrap'>
-      {policies.map((items)=> {
-  return (
-    
-    <div key={items.name} className='md:w-[20%] w-[45%] py-[1rem] md:py-0 px-[1rem] md:px-[2rem] flex-col flex-wrap flex text-center'>
-    <div className='flex justify-center'>
-    {items.logo}
-    </div>
-    <h1 className='bebasBold py-[0.5rem]'>{items.name}</h1>
-    <p className="md:text-sm text-xs futuraMedium">{items.desc}</p>
+      <div className='flex w-full justify-center flex-wrap pb-[2rem] md:pb-[6rem]'>
+        {policies.map((items) => {
+          return (
 
-    </div> 
+            <div key={items.name} className='md:w-[20%] w-[45%] py-[1rem] md:py-0 px-[1rem] md:px-[2rem] flex-col flex-wrap flex text-center'>
+              <div className='flex justify-center'>
+                {items.logo}
+              </div>
+              <h1 className='bebasBold py-[0.5rem]'>{items.name}</h1>
+              <p className="md:text-sm text-xs futuraMedium">{items.desc}</p>
+
+            </div>
 
 
-  )
-})}
+          )
+        })}
 
       </div>
 

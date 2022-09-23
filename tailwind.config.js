@@ -49,7 +49,7 @@ module.exports = {
     },
   },
   daisyui:{
-    themes: [
+    themes: [true,
       {
         light: {
           ...require("daisyui/src/colors/themes")["[data-theme=light]"],

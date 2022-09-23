@@ -73,9 +73,11 @@ const Nav = () => {
               </div>
 
               <Link href="/">
-              <div className="md:flex hidden transition-all duration-300 items-center h-full">
+              <a>
+              <div className="md:flex hidden items-center h-full">
                     <Logo color='white' size={100} />
               </div>
+              </a>
               </Link>
 
               <div className={clsx("hidden pl-[3rem] text-white transition-all duration-300 small:flex items-center h-full",

@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Logo = ({
-    size = "16",
-    color = "currentColor",
-    isScrolled,
-    isDark,
-    ...attributes
-}) => {
+
+const Logo = React.forwardRef(function Logo({
+  size = "16",
+  color = "currentColor"
+}, ref) {
+  
   return (
     <svg version="1.1" width={size} stroke={color}
     height={size} id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className={`w-24 cursor-pointer fill-current text-white`}
@@ -47,7 +46,9 @@ c-0.2-0.4-0.4-0.9-0.4-1.5H168.2z"/>
         <rect stroke={color}  width="2.3" height="52.2" />
     </g>
 </svg>
-  )
-}
+  );
+});
+
+
 
 export default Logo

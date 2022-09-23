@@ -14,7 +14,7 @@ export default function Hero({main,caption}) {
             <span id="blackOverlay" className="w-full h-full absolute opacity-30 bg-black"></span>
             {
                 main ? <div>
-                 <div style={{height:"200px"}}>
+                 <div className='w-full' style={{height:"200px"}}>
                          <Image data-aos="zoom-y-out" data-aos-delay="300" src="/ATTILA(2).svg" layout="fill"/>
                 </div>
                     <div className="mx-2 centerlayer text-center">
