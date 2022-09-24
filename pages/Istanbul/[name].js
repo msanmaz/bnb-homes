@@ -14,7 +14,8 @@ const Index = ({ house }) => {
   React.useMemo(() => arr?.forEach((item, i) => {
     if (i % 2 === 0) resultArr.push(<br />);
     resultArr.push(item);
-  }))
+  }),[house.description])
+  
   return (
     <>
 

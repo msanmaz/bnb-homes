@@ -15,7 +15,7 @@ export default function Hero({main,caption}) {
             {
                 main ? <div>
                  <div className='w-full' style={{height:"200px"}}>
-                         <Image data-aos="zoom-y-out" data-aos-delay="300" src="/ATTILA(2).svg" layout="fill"/>
+                         <Image data-aos="zoom-y-out" alt={'Hero Image'} data-aos-delay="300" src="/ATTILA(2).svg" layout="fill"/>
                 </div>
                     <div className="mx-2 centerlayer text-center">
                         <div className="inline-flex">

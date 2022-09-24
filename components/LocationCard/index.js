@@ -33,7 +33,7 @@ const LocationCard = ({image,title}) => {
     return (
         <>
             <div className={`relative w-full`}>
-                <Image src={`/${image}`} layout="responsive" className='relative' width={600} height={520}/>
+                <Image src={`/${image}`} alt={'Image Location'} layout="responsive" className='relative' width={600} height={520}/>
                 <div className='absolute h-full inset-0 hover:opacity-0 opacity-50 bg-gray-800'></div>
                 <Link href={`/${title}`}>
                     <div className="absolute mobilecenter small:centerlayer">
