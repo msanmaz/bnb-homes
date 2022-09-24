@@ -1,12 +1,7 @@
 import React from 'react'
 
-const HouseDescription = ({ house }) => {
-    const arr = house.description && house.description.split(/<br \/>/)
-    const resultArr = [];
-    arr?.forEach((item, i) => {
-        if (i % 2 === 0) resultArr.push(<br />);
-        resultArr.push(item);
-    })
+const HouseDescription = ({ house,resultArr }) => {
+
     console.log(resultArr)
 
     return (
