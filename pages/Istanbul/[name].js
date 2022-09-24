@@ -9,6 +9,7 @@ import Maps from 'components/HouseDetail/maps.tsx'
 
 
 const Index = ({ house }) => {
+  console.log(house)
   const arr = house.description && house.description.split(/<br \/>/)
   const resultArr = [];
   React.useMemo(() => arr?.forEach((item, i) => {
