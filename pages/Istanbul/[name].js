@@ -7,10 +7,9 @@ import HouseDetail from 'components/HouseDetail/house-detail'
 import HouseDescription from 'components/HouseDetail/house-desc'
 import Maps from 'components/HouseDetail/maps.tsx'
 
-
 const Index = ({ house }) => {
-  console.log(house)
-  const arr = house.description && house.description.split(/<br \/>/)
+
+  const arr = house.description && house.description.split(/<br \/>/) || []
   const resultArr = [];
   React.useMemo(() => arr?.forEach((item, i) => {
     if (i % 2 === 0) resultArr.push(<br />);

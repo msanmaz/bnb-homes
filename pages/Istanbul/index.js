@@ -1,10 +1,11 @@
 import Hero from 'components/Hero/index.js'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from 'common/Layout'
 import Select from 'common/Select/sel-ect'
 import prisma from 'lib/prisma'
 import CardContainer from 'components/CardContainer/card-container'
 import { getHouses } from 'lib/data/getHousePhotos'
+
 
 const Istanbul = ({ houses }) => {
 
@@ -12,7 +13,6 @@ const Istanbul = ({ houses }) => {
     <>
       <Hero caption={'Istanbul'} main={false} />
       <Intro />
-      <Select />
       <CardContainer houses={houses}/>
 
     </>

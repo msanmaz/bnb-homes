@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Select = () => {
+const Select = ({setFilteredWord}) => {
+
+    const handleChange = e => {
+        setFilteredWord(e.target.value);
+      };
+
     return (
         <>
             <div className='flex justify-center  gap-x-6 md:flex-row'>
@@ -9,13 +14,13 @@ const Select = () => {
                     <label className="label">
                         <span className="label-text">Number Of Rooms</span>
                     </label>
-                    <select className="select select-bordered">
+                    <select className="select select-bordered" onChange={handleChange}>
                         <option defaultValue={'Pick One'}>Pick one</option>
-                        <option>1 Room</option>
-                        <option>2 Room</option>
-                        <option>3 Room</option>
-                        <option>4 Room</option>
-                        <option>5+ Room</option>
+                        <option value='1'>1 Room</option>
+                        <option value='2'>2 Room</option>
+                        <option value='3'>3 Room</option>
+                        <option value='4'>4 Room</option>
+                        <option value='5'>5+ Room</option>
                     </select>
                 </div>
 

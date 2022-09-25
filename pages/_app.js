@@ -4,6 +4,7 @@ import { SessionProvider } from 'next-auth/react'
 import { DarkModeProvider } from 'lib/context/darkModeContext'
 import {Router} from 'next/router'
 import BackDrop from 'common/Backdrop/back-drop'
+import { SelectProvider } from 'lib/context/housesContext'
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout ?? ((page) => page)
@@ -29,7 +30,7 @@ function MyApp({ Component, pageProps }) {
   return(
 <>
 {
-  loading ? <BackDrop isOpen={loading}/> : <DarkModeProvider><SessionProvider session={pageProps.session}>  {getLayout(<Component {...pageProps} />)}</SessionProvider></DarkModeProvider>
+  loading ? <BackDrop isOpen={loading}/> : <SelectProvider><DarkModeProvider><SessionProvider session={pageProps.session}>  {getLayout(<Component {...pageProps} />)}</SessionProvider></DarkModeProvider></SelectProvider>
 }
 
 </>
