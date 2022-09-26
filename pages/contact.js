@@ -176,7 +176,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                 <label className="block futuraMedium text-sm font-medium mb-1" htmlFor="name">Name<span className="text-red-600">*</span></label>
                                 <input
                                     id="name"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
                                     name="name"
                                     type="firstname"
                                     required
@@ -188,7 +188,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                 <label className="block futuraMedium text-sm font-medium mb-1" htmlFor="last-name">Phone <span className="text-red-600">*</span></label>
                                 <input
                                     id="phone"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
                                     name="phone"
                                     type="phone"
                                     required
@@ -202,7 +202,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                 <label className="block futuraMedium text-sm font-medium mb-1" htmlFor="email">Email <span className="text-red-600">*</span></label>
                                 <input
                                     id="email"
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
+                                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
                                     name="email"
                                     required
                                     autofocus
@@ -217,7 +217,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                 <label className="block futuraMedium text-sm font-medium mb-1" htmlFor="message">Your Message</label>
                                 <textarea
                                     name="message"
-                                    onChange={handleOnChange} id="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
+                                    onChange={handleOnChange} id="message" rows="4" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
                                     placeholder="Write your message"></textarea>
                             </div>
                         </div>
