@@ -15,7 +15,7 @@ const Select = ({setFilteredWord}) => {
                         <span className="label-text">Number Of Rooms</span>
                     </label>
                     <select className="select select-bordered" onChange={handleChange}>
-                        <option defaultValue={'Pick One'}>Pick one</option>
+                        <option value={'All'}>All house</option>
                         <option value='1'>1 Room</option>
                         <option value='2'>2 Room</option>
                         <option value='3'>3 Room</option>

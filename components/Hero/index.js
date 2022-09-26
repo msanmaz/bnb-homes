@@ -19,9 +19,9 @@ export default function Hero({main,caption}) {
                 </div>
                     <div className="mx-2 centerlayer text-center">
                         <div className="inline-flex">
-                          <Button>Satin Almak Istiyorum</Button>
+                          <Button>I Want To Buy</Button>
                           <div className='px-[0.5rem]'/>
-                          <Button>Kiralamak Istiyorum</Button>
+                          <Button>I Want To Rent</Button>
                         </div>
                     </div></div> : <div className='centerlayero text-center flex-col bebasBold text-3xl'>
                    <div className='text-5xl'> {caption}</div>                   <div>Five Star Full-Service Luxury Vacation Homes

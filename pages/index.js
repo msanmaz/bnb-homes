@@ -43,19 +43,18 @@ const Intro = () => {
   return (
     <div className='flex w-full justify-center py-[2rem] text-sm small:text-base px-[1rem] small:px-[11rem] text-center'>
       <h1 className={`futuraMedium to-base-content`}>
-        Attila Homes; Türkiye ve Almanyada faaliyet gösteren, gayrimenkul alanında hayalinizdeki evi bulmanızı ve en iyi yatırımı yapmanızı sağlayan uzman bir şirkettir. Kaliteli yaşam ve kazandıran yatırım için hemen bizimle iletişime geçin.
-      </h1>
+      Attila Homes; is an expert company operating in Turkey and Germany, enabling you to find your dream home and make the best investment in the field of real estate. Contact us now for quality life and profitable investment.      </h1>
     </div>
   )
 }
 
 
 const Policy = ({ isDark }) => {
-  const policies = [{ name: 'konfor', desc: 'Amacimiz yasam alaninizda rahat etmeniz.Attila Homes olarak portfoyumuzdeki gayrimenkulleri ozenle seciyoruz ve begeninize sunuyoruz', logo: <Comfort isDark={isDark} size={80} /> },
-  { name: 'Ilgi', desc: 'Gayrimenkul alanında ki tecrübemizle birlikte karar verme sürenicizde oluşabılecek bütün soru işaretlerini gidermenizde yardımcı oluyoruz.', logo: <Care isDark={isDark} size={80} /> },
-  { name: 'Yatırım', desc: 'Gayrimenkul en kıymetli yatırım araçlarından biridir. Attıla Homes tecrübesi ve güvencesiyle yatırımlarınızı en doğru şekilde değerlendirmenizi sağlıyoruz.', logo: <Invest isDark={isDark} size={80} /> },
-  { name: 'Guven', desc: 'Utkucan ailesi ve yakın dostlarından oluşan portföyümüzle iş ortaklığımızı güven üzerine temellendiriyoruz.', logo: <Shield size={80} isDark={isDark} /> },
-  { name: 'Iletisim', desc: 'Hayal ettiğiniz yaşam alanınıza dair düşünceleriniz ve sorunlarınız bizim için çok önemli.Attıla Homes olarak sürecin her anında sizinle iletişim halindeyiz.', logo: <MessageBubble isDark={isDark} size={80} /> }]
+  const policies = [{ name: 'Comfort', desc: 'Our aim is to make you comfortable in your living space. As Attila Homes, we carefully select the properties in our portfolio and present them to your liking.', logo: <Comfort isDark={isDark} size={80} /> },
+  { name: 'Interest', desc: 'With our experience in the field of real estate, we help you to eliminate all the question marks that may arise in your decision-making process.', logo: <Care isDark={isDark} size={80} /> },
+  { name: 'Invest', desc: 'Real estate is one of the most valuable investment tools. With the experience and assurance of Attila Homes, we enable you to evaluate your investments in the most accurate way.', logo: <Invest isDark={isDark} size={80} /> },
+  { name: 'Trust', desc: 'We base our business partnership on trust with our portfolio consisting of the Utkucan family and close friends.', logo: <Shield size={80} isDark={isDark} /> },
+  { name: 'Communication', desc: 'Your thoughts and problems about your dreamed living space are very important to us. As Attila Homes, we are in contact with you at every moment of the process.', logo: <MessageBubble isDark={isDark} size={80} /> }]
 
   return (
     <>

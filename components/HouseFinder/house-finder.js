@@ -5,7 +5,6 @@ import HouseCard from 'components/HouseCard/house-card'
 
 const HouseFinder = ({houses}) => {
   const [searchInput, setSearchInput] = React.useState('')
-  const [filteredResults, setFilteredResults] = React.useState([]);
 
 
 

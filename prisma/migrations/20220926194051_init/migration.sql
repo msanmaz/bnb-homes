@@ -2,6 +2,7 @@
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "username" TEXT,
+    "password" TEXT,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
@@ -48,17 +49,18 @@ CREATE TABLE "Session" (
 -- CreateTable
 CREATE TABLE "Houses" (
     "id" TEXT NOT NULL,
-    "room" INTEGER,
-    "livingR" INTEGER,
-    "kitchen" INTEGER,
-    "bathR" INTEGER,
-    "carpark" BOOLEAN NOT NULL,
+    "room" TEXT,
+    "livingR" TEXT,
+    "kitchen" TEXT,
+    "bathR" TEXT,
+    "carpark" TEXT,
     "caption" TEXT,
     "image" TEXT,
     "location" TEXT,
     "price" TEXT,
     "heating" TEXT,
     "type" TEXT,
+    "description" TEXT,
 
     CONSTRAINT "Houses_pkey" PRIMARY KEY ("id")
 );

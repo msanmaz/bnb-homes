@@ -33,7 +33,7 @@ const Intro = () => {
   return (
     <div className='flex w-full justify-center py-[2rem] text-sm small:text-base px-[1rem] small:px-[11rem] text-center'>
       <h1 className={`futuraMedium to-base-content`}>
-        Attila Homes; Türkiye ve Almanyada faaliyet gösteren, gayrimenkul alanında hayalinizdeki evi bulmanızı ve en iyi yatırımı yapmanızı sağlayan uzman bir şirkettir. Kaliteli yaşam ve kazandıran yatırım için hemen bizimle iletişime geçin.
+      Attila Homes; It is an expert company operating in Turkey and Germany, enabling you to find your dream home and make the best investment in the field of real estate. Contact us now for quality life and profitable investment.
       </h1>
     </div>
   )
