@@ -5,12 +5,14 @@ import Select from 'common/Select/sel-ect'
 import prisma from 'lib/prisma'
 import CardContainer from 'components/CardContainer/card-container'
 import { getHouses } from 'lib/data/getHousePhotos'
+import Meta from 'components/Meta'
 
 
 const Istanbul = ({ houses }) => {
 
   return (
     <>
+    <Meta title={'Istanbul | ATTILA HOMES'}/>
       <Hero caption={'Istanbul'} main={false} />
       <Intro />
       <CardContainer houses={houses}/>

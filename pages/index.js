@@ -10,16 +10,14 @@ import Care from 'common/icons/care'
 import Invest from 'common/icons/invest'
 import Shield from 'common/icons/shield'
 import Layout from 'common/Layout'
+import Meta from 'components/Meta'
 
 export default function Home() {
   const { isDark } = useContext(DarkModeContext)
 
   return (
     <>
-      <Head>
-        <title>Bnb Estate</title>
-      </Head>
-
+    <Meta/>
       <Hero main={true} />
       <Intro isDark={isDark} />
       <LocationCardContainer />
@@ -60,7 +58,7 @@ const Policy = ({ isDark }) => {
     <>
       <div className='flex py-[3rem] items-center justify-center w-full small:flex-row'>
         <div className={`w-[40%] ml-[1rem] md:ml-0 border-t border-gray-300`}></div>
-        <div className='bebasBold text-xl md:text-2xl px-[1rem] md:px-[3rem]'>Politikamiz</div>
+        <div className='bebasBold text-xl md:text-2xl px-[1rem] md:px-[3rem]'>Our Policy</div>
         <div className={`w-[40%] mr-[1rem] md:mr-0 border-t border-gray-300 `}></div>
       </div>
 
