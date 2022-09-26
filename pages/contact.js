@@ -180,7 +180,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                     name="name"
                                     type="firstname"
                                     required
-                                    autofocus
+                                    autoFocus
                                     placeholder="İsminizi Yazınız"
                                     onChange={handleOnChange}
                                 />                  </div>
@@ -192,7 +192,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                     name="phone"
                                     type="phone"
                                     required
-                                    autofocus
+                                    autoFocus
                                     onChange={handleOnChange}
                                     placeholder="Telefon Numaranizi Yazınız"
                                 />                   </div>
@@ -205,7 +205,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent "
                                     name="email"
                                     required
-                                    autofocus
+                                    autoFocus
                                     onChange={handleOnChange}
                                     placeholder="Email Adresinizi Yazınız"
                                 />                            </div>
@@ -231,7 +231,7 @@ const Section = ({ handleOnChange, handleOnSubmit, status }) => {
                             </div>
                         </div>
                         <div className="text-sm text-gray-400 mt-4">
-                            By clicking "send" you consent to allow Simple to store and process the personal information submitted above and agree to our <a className="underline" href="#0">terms and conditions</a> as well as our <a className="underline" href="#0">Privacy Policy</a>.
+                            By clicking &quot;send&quot; you consent to allow Simple to store and process the personal information submitted above and agree to our <a className="underline" href="#0">terms and conditions</a> as well as our <a className="underline" href="#0">Privacy Policy</a>.
                         </div>
                     </form>
 
