@@ -42,13 +42,14 @@ export default NextAuth({
   pages: {
     signIn: "/admin",
   },
-  database: process.env.DATABASE_URL,
-  secret: process.env.SECRET,
-
   session: {
     strategy:'jwt',
     maxAge: 30 * 24 * 60 * 60 // 30 days
   },
+
+  database: process.env.DATABASE_URL,
+  secret: process.env.NEXTAUTH_SECRET,
+
 
   callbacks: {
     jwt: async ({ token, user,account }) => {
