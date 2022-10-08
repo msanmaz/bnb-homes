@@ -79,7 +79,7 @@ const Nav = () => {
               </div>
               </a>
               </Link>
-
+              <Link href='/sale'>
               <div className={clsx("hidden pl-[3rem] text-white transition-all duration-300 small:flex items-center h-full",
                 {
                   "!text-gray-300": !isHome || isScrolled,
@@ -87,7 +87,9 @@ const Nav = () => {
                 })}>
                 For Sale
               </div>
+</Link>
 
+<Link href='/rent'>
               <div className={clsx("hidden pl-[3rem] text-white transition-all duration-300 small:flex items-center h-full",
                 {
                   "!text-gray-300": !isHome || isScrolled,
@@ -95,7 +97,7 @@ const Nav = () => {
                 })}>
                 For Rent
               </div>
-
+</Link>
             </div>
 
  

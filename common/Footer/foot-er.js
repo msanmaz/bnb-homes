@@ -7,7 +7,7 @@ const Footer = () => {
 <footer className="footer p-10 text-base-content border-t md:border-none">
   <div>
   <Logo size={100}/>
-    <p className='futuraMedium'>ATTILA HOMES Ltd.<br/>Providing reliable Real Estate solutions since 1992</p>
+    <p className='futuraMedium'>ATTILA HOMES Ltd.<br/>Providing reliable Real Estate solutions since 2014</p>
   </div> 
   <div>
     <span className="footer-title !bebasBold text-xl">Services</span> 
