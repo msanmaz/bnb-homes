@@ -4,7 +4,7 @@ import Layout from 'common/Layout'
 import Select from 'common/Select/sel-ect'
 import prisma from 'lib/prisma'
 import CardContainer from 'components/CardContainer/card-container'
-import { getHouses } from 'lib/data/getHousePhotos'
+import { getHouses, getRental } from 'lib/data/getHousePhotos'
 import Meta from 'components/Meta'
 
 
@@ -45,7 +45,7 @@ const Intro = () => {
 
 
 export async function getServerSideProps() {
-  let houses = await getHouses(prisma)
+  let houses = await getRental(prisma)
   houses = JSON.parse(JSON.stringify(houses))
 
 

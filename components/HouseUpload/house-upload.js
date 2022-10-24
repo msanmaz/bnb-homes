@@ -8,7 +8,7 @@ import { ref, getDownloadURL, uploadBytes } from 'firebase/storage'
 import { storage } from 'lib/firebase'
 
 const HouseUpload = () => {
-    const Locations = [{ loc: 'room', type: 'text' }, { loc: 'caption', type: 'text' }, { loc: 'livingR', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }, {loc:'description', type:'textarea'}]
+    const Locations = [{ loc: 'room', type: 'text' },{loc:"m2", type:'text'} ,{ loc: 'caption', type: 'text' }, { loc: 'livingR', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }, {loc:'description', type:'textarea'}]
     const {
         register,
         handleSubmit,
