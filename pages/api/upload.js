@@ -1,13 +1,12 @@
 import prisma from 'lib/prisma'
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST' && req.method !== 'DELETE') {
+  if (req.method !== 'POST') {
     return res.status(501).end()
   }
-  console.log(req.body)
-  const { room,caption,m2,livingR,kitchen,bathR,carpark,location,price,heating,type,url,description } = req.body
   if (req.method === 'POST') { 
-   const tweet = await prisma.Houses.create({
+    const { room,caption,m2,livingR,kitchen,bathR,carpark,location,price,heating,type,url,description } = req.body
+   const tweet = await prisma.houses.create({
       data: {
         room: room,
         livingR:livingR,
