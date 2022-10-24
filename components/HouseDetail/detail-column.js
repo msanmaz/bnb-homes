@@ -32,7 +32,7 @@ const Price = ({house}) => {
 
       <div className='pb-6 flex md:pr-[2rem]'>
       <M2 size={40}/>
-      <p className='text-xl futuraMedium px-4 items-center flex pt-4'>{house.m2}</p>
+      <p className='text-xl futuraMedium px-4 items-center flex pt-4'>{house.metrekare}</p>
       </div>
 
 
