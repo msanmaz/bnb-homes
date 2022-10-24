@@ -2,13 +2,13 @@ import clsx from "clsx"
 import React from "react"
 
 
-const Hamburger = ({ setOpen,isDark,isScrolled }) => {
+const Hamburger = ({ setIsOpen,isDark,isOpen,isScrolled }) => {
   return (
     <button className={clsx("w-10 h-10 focus:outline-none text-white",{
         
               "!text-white": isScrolled && isDark,
       
-    } )}onClick={setOpen}>
+    } )}onClick={()=> setIsOpen(!isOpen)}>
       <span className="sr-only">Open main menu</span>
       <div className="block w-5 absolute transform  -translate-x-1/2 -translate-y-1/2">
         <span

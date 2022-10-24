@@ -8,6 +8,7 @@ import Phone from "common/icons/phone"
 import Moon from "common/icons/moon"
 import { useContext } from 'react'
 import { DarkModeContext } from "lib/context/darkModeContext"
+import SideBar from "./side-bar"
 
 const Nav = () => {
   const { isDark,toggleThemeChange } = useContext(DarkModeContext)
@@ -15,6 +16,7 @@ const Nav = () => {
   const { pathname } = useRouter()
   const [isHome, setIsHome] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
 
   //useEffect that detects if window is scrolled > 5px on the Y axis
@@ -69,7 +71,7 @@ const Nav = () => {
           >
             <div className="flex-1 justify-between md:justify-start basis-0 h-full flex items-center">
               <div className="block small:hidden">
-                <Hamburger isDark={isDark} isScrolled={isScrolled}/>
+                <Hamburger setIsOpen={setIsOpen} isOpen={isOpen} isDark={isDark} isScrolled={isScrolled}/>
               </div>
 
               <Link href="/">
@@ -128,21 +130,12 @@ const Nav = () => {
                 <a href="tel:+90 531 344 30 90">‎+90 531 344 30 90</a>
 
               </div>
-{/* 
-              <div className={clsx("hidden transition-all duration-300 text-white small:flex items-center md:gap-x-6  h-full",
-                {
-                  "!text-black": !isHome || isScrolled,
-                }
-              )}>
 
-                <Link href='/wishlist'>
-                  about us
-                </Link>
-              </div> */}
 
             </div>
 
           </nav>
+          <SideBar isOpen={isOpen}/>
         </header>
       </div>
     </>
