@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST' && req.method !== 'DELETE') {
     return res.status(501).end()
   }
-
+  console.log(req.body)
   const { room,caption,m2,livingR,kitchen,bathR,carpark,location,price,heating,type,url,description } = req.body
   if (req.method === 'POST') { 
    const tweet = await prisma.Houses.create({
