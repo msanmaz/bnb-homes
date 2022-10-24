@@ -1,22 +1,14 @@
 import React from 'react'
 import { useContext } from 'react'
 import { DarkModeContext } from "lib/context/darkModeContext"
-import Comfort from 'common/icons/comfort'
-import Saloon from 'common/icons/saloon'
 import Money from 'common/icons/money'
 import M2 from 'common/icons/m2'
-import Kitchen from 'common/icons/kitchen'
-import Bathroom from 'common/icons/bathroom'
-import Combi from 'common/icons/combi'
-import clsx from 'clsx'
-import Balkon from 'common/icons/balkon'
 import ColumnItem, { Surroundings } from './column-item'
 
 const RightColumn = ({house}) => {
 
   const { isDark } = useContext(DarkModeContext)
-  const dark = isDark
-  console.log(isDark,'isdak')
+
 
   return (
     <div className='daire w-full justify-items-center '>

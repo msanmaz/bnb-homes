@@ -101,14 +101,11 @@ const Nav = () => {
             </div>
 
  
-
+                <Link href='/'>
             <div className="flex md:hidden items-center h-full">
-              <Link href="/">
       <Logo  isDark={isDark}  isScrolled={isScrolled} size={90} />
-            
-              </Link>
             </div>
-            
+            </Link>
 
 
 
