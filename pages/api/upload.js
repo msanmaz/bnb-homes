@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         heating:heating,
         type:type,
         image:url,
-        m2:m2,
+        metrekare:m2,
         caption:caption,
         description:description
       },
