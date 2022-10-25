@@ -100,6 +100,16 @@ const Nav = () => {
                 For Rent
               </div>
 </Link>
+
+<Link href='/contact'>
+              <div className={clsx("hidden pl-[3rem] text-white transition-all duration-300 small:flex items-center h-full",
+                {
+                  "!text-gray-300": !isHome || isScrolled,
+                  "!text-white": isDark && isScrolled,
+                })}>
+                Contact
+              </div>
+</Link>
             </div>
 
  
