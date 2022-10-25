@@ -5,12 +5,13 @@ export default async function handler(req, res) {
     return res.status(501).end()
   }
 
-  const { image,id } = req.body
+  const { image,id,imageId} = req.body
   console.log(req.body)
   if (req.method === 'POST') { 
     const imgUpload = await prisma.Images.create({
       data:{
         url:image,
+        imageId:imageId,
         house:{
           connect:{
             id: id

@@ -15,12 +15,14 @@ const EditHouse = ({ house }) => {
   const handleChange = (e) => {
     for (let i = 0; i < e.target.files.length; i++) {
       const newImage = e.target.files[i];
+      newImage["id"] = i
       setImages((prevState) => [...prevState, newImage]);
     }
   };
 
   const handleUpload = () => {
     images.map((image, index) => {
+    
       const refStorage = ref(storage, `images/${image.name}`);
       const uploadTask = uploadBytesResumable(refStorage, image)
       uploadTask.on(
@@ -35,12 +37,14 @@ const EditHouse = ({ house }) => {
           console.log(error);
         },
         async () => {
-          await getDownloadURL(uploadTask.snapshot.ref).then(async (image) => {
+          await getDownloadURL(uploadTask.snapshot.ref).then(async (img) => {
+            console.log(image,'img in egt')
             const response = await fetch('/api/imageUpload', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                image: image,
+                imageId:image.id,
+                image: img,
                 id: house.id
               })
             })
