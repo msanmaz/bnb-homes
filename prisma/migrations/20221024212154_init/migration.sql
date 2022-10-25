@@ -61,6 +61,7 @@ CREATE TABLE "Houses" (
     "heating" TEXT,
     "type" TEXT,
     "description" TEXT,
+    "metrekare" TEXT,
 
     CONSTRAINT "Houses_pkey" PRIMARY KEY ("id")
 );

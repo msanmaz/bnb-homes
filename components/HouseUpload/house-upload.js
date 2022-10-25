@@ -8,7 +8,7 @@ import { ref, getDownloadURL, uploadBytes } from 'firebase/storage'
 import { storage } from 'lib/firebase'
 
 const HouseUpload = () => {
-    const Locations = [{ loc: 'room', type: 'text' }, { loc: 'caption', type: 'text' }, { loc: 'livingR', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }, {loc:'description', type:'textarea'}]
+    const Locations = [{ loc: 'room', type: 'text' },{loc:"m2", type:'text'} ,{ loc: 'caption', type: 'text' }, { loc: 'kitchen', type: 'text' }, { loc: 'bathR', type: 'text' }, { loc: 'carpark', type: 'text' }, { loc: 'location', type: 'text' }, { loc: 'price', type: 'text' }, { loc: 'heating', type: 'text' }, { loc: 'type', type: 'text' }, {loc:'description', type:'textarea'}]
     const {
         register,
         handleSubmit,
@@ -43,7 +43,7 @@ const HouseUpload = () => {
         event.preventDefault();
         setLoading(true)
 
-        const { room, caption, livingR, kitchen, bathR, carpark, location, price, heating, type,description } = data
+        const { room, caption,m2, kitchen, bathR, carpark, location, price, heating, type,description } = data
         const refStorage = ref(storage, `images/${images.name}`);
         uploadBytes(refStorage, images).then((snapshot) => {
             getDownloadURL(snapshot.ref).then(async (url) => {
@@ -51,7 +51,7 @@ const HouseUpload = () => {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        room, livingR, kitchen, bathR, carpark, location, price, heating, type, url, caption,description
+                        room, m2, kitchen, bathR, carpark, location, price, heating, type, url, caption,description
                     })
                 })
                 const resp = await response.json()

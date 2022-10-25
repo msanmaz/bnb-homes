@@ -73,6 +73,7 @@ model Houses {
   heating      String?
   type         String?
   description  String?
+  metrekare    String?
   images Images[]
   places Places[]
 

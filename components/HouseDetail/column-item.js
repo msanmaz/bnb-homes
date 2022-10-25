@@ -1,6 +1,3 @@
-import Combi from 'common/icons/combi'
-import Comfort from 'common/icons/comfort'
-import Kitchen from 'common/icons/kitchen'
 import React from 'react'
 
 const ColumnItem = ({ caption, house }) => {
@@ -15,18 +12,18 @@ const ColumnItem = ({ caption, house }) => {
                         <div className='flex w-full justify-between flex-wrap flex-row'>
                             <div className='flex py-2 items-center !w-[50%] md:w-full flex-row pr-4'>
                                 <p className='bebas text-base'>Room:</p>
-                                <p className='text-xs futuraMedium px-4'>{house.room} Oda</p>
+                                <p className='text-xs futuraMedium px-4'>{house.room} Room</p>
                             </div>
 
                             <div className='flex py-2 flex-row !w-[50%] md:w-full items-center pl-[1.5rem]'>
                                 <p className='bebas text-base'>Kitchen:</p>
-                                <p className='text-xs futuraMedium px-4'>{house.room} Mutfak</p>
+                                <p className='text-xs futuraMedium px-4'>{house.kitchen}</p>
                             </div>
 
                             <div className='flex items-center !w-[50%] md:w-full flex-row pr-[0.2rem]'>
                                 <p className='bebas text-base'>Bathroom:</p>
 
-                                <p className='text-xs futuraMedium px-4'>{house.room} Banyo</p>
+                                <p className='text-xs futuraMedium px-4'>{house.bathR}</p>
                             </div>
 
 
