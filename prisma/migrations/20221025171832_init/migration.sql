@@ -70,6 +70,7 @@ CREATE TABLE "Houses" (
 CREATE TABLE "Images" (
     "id" TEXT NOT NULL,
     "url" TEXT,
+    "imageId" INTEGER,
     "houseId" TEXT NOT NULL,
 
     CONSTRAINT "Images_pkey" PRIMARY KEY ("id")

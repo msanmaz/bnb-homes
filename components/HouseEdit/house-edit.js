@@ -8,7 +8,7 @@ import { ref, uploadBytesResumable, listAll, getDownloadURL } from 'firebase/sto
 
 const EditHouse = ({ house }) => {
   const [images, setImages] = useState([]);
-  const [urls, setUrls] = useState([]);
+  const [success, setSuccess] = useState([]);
   const [progress, setProgress] = useState(0);
   console.log(house,'house')
 
@@ -49,6 +49,7 @@ const EditHouse = ({ house }) => {
               })
             })
             const resp = await response.json()
+            setSuccess(resp)
             console.log(resp)
           })
         });
@@ -62,7 +63,7 @@ const EditHouse = ({ house }) => {
       <div className='bebasBold text-2xl flex justify-center'>{house && house.caption}</div>
       <Input handleChange={handleChange} />
       <Button handleUpload={handleUpload}> Upload Image</Button>
-      <Success progress={progress} />
+      <Success progress={progress} success={success} />
 
     </div>
   )
@@ -86,12 +87,16 @@ const Input = ({ handleChange }) => {
   )
 }
 
-const Success = ({ progress }) => {
+const Success = ({ progress,success }) => {
   return (
     <>
       <div className='flex flex-col py-6 justify-center'>
         {
-          progress === 100 && <div className='flex text-green-400 justify-center bebasBold text-2xl py-4'>Successfully uploaded images!</div>
+          progress === 100 && <div className='flex text-green-400 justify-center bebasBold text-2xl py-4'>Uploading Images To Database Now</div>
+
+        }
+                {
+          success && <div className='flex text-green-400 justify-center bebasBold text-2xl py-4'>{success.success}</div>
 
         }
         <div className='flex justify-center'>

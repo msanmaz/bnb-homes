@@ -21,7 +21,7 @@ export default function Hero({main,caption}) {
                         <div className="inline-flex">
                           <Button><Link href='/sale'>I Want To Buy</Link></Button>
                           <div className='px-[0.5rem]'/>
-                          <Button><Link href='/rent'>I Want To Rent</Link></Button>
+                          <Button><Link href='/rental'>I Want To Rent</Link></Button>
                         </div>
                     </div></div> : <div className='centerlayero text-center flex-col bebasBold text-3xl'>
                    <div className='text-5xl'> {caption}</div>                   <div>Five Star Full-Service Luxury Vacation Homes

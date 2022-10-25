@@ -11,7 +11,7 @@ const HouseDescription = ({ house,resultArr }) => {
                 {
                     resultArr.filter((item)=> item.length >= 1).map((item,index) => {
                         return (
-                            <p key={index} className='futuraMedium text-center text-lg'>
+                            <p key={index} className='futuraMedium text-center text-base'>
 
                                {item} <br />
                             </p>
