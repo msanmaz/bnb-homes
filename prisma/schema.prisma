@@ -82,7 +82,7 @@ model Houses {
 model Images {
   id           String   @id @default(cuid())
   url          String?
-  imageId      Int?
+  imageque      Int?
   houseId      String
   house         Houses     @relation(fields: [houseId], references: [caption])
 

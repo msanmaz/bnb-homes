@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     const imgUpload = await prisma.Images.create({
       data:{
         url:image,
-        imageId:imageId,
+        imageque:imageId,
         house:{
           connect:{
             id: id
