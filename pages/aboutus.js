@@ -68,7 +68,7 @@ function AboutHero() {
                     </div>
                     <div className="ml-6">
                         <p className="text-black text-xs dark:text-white md:mr-8 px-12 sm:px-0 sm:my-8 text-center">
-                            Attila Homes; Attila Utkucan'in insaat ve emlak sektor bilesenlerini bir araya getirip, Almanya ve Turkiye sinirlari icerisinde hizmet veren bir gayrimenkul ve danismalik sirketidir.Karli yatirima boyut katarak
+                            Attila Homes; Attila Utkucan&apos;in insaat ve emlak sektor bilesenlerini bir araya getirip, Almanya ve Turkiye sinirlari icerisinde hizmet veren bir gayrimenkul ve danismalik sirketidir.Karli yatirima boyut katarak
                             hem kazancli hem keyifli gayrimenkul sahibi olmaniz icin dinamik ekimizle sizler icin calismaktayiz.
                         </p>
 
