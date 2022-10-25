@@ -5,7 +5,7 @@ import { getSession,signOut } from 'next-auth/react'
 import Link from 'next/link'
 import prisma from 'lib/prisma'
 import Login from 'components/Login/user-login'
-import { getHouse } from 'lib/data/getHousePhotos'
+import { getH } from 'lib/data/getHousePhotos'
 
 
 const HouseName = ({session,house}) => {
@@ -57,9 +57,9 @@ HouseName.getLayout = (page) => {
 
 
 export async function getServerSideProps(context) {
-  const getH = await getHouse(context.params.caption,prisma)
+  const getHouse = await getH(context.params.caption,prisma)
 
-  const house = JSON.parse(JSON.stringify(getH))
+  const house = JSON.parse(JSON.stringify(getHouse))
  const session = await getSession(context);
 
 
